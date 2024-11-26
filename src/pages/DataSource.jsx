@@ -1,80 +1,57 @@
 import React from "react";
+import { Box, Button, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@emotion/react';
 
 const DataSource = () => {
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-2xl font-bold mb-6">Data Source</h1>
-
+    <Box sx={{ p: 6, bgcolor: 'gray.100', minHeight: '100vh' }}>
+      <Typography variant="h1" sx={{ fontSize: '2xl', fontWeight: 'bold', mb: 6 }}>Data Source</Typography>
+      
       {/* Tabs */}
-      <div className="flex space-x-4 mb-6">
-        <button className="bg-yellow-100 text-yellow-700 px-4 py-2 rounded-md">
-          ABP
-        </button>
-        <button className="bg-blue-100 text-blue-700 px-4 py-2 rounded-md">
-          Reports
-        </button>
-        <button className="bg-pink-100 text-pink-700 px-4 py-2 rounded-md">
-          Tests
-        </button>
-        <button className="bg-green-100 text-green-700 px-4 py-2 rounded-md">
-          Informer
-        </button>
-      </div>
+      <Box sx={{ display: 'flex', gap: 4, mb: 6 }}>
+        <Button sx={{ bgcolor: 'yellow.100', color: 'yellow.700', px: 4, py: 2, borderRadius: 'md' }}>ABP</Button>
+        <Button sx={{ bgcolor: 'blue.100', color: 'blue.700', px: 4, py: 2, borderRadius: 'md' }}>Reports</Button>
+        <Button sx={{ bgcolor: 'pink.100', color: 'pink.700', px: 4, py: 2, borderRadius: 'md' }}>Tests</Button>
+        <Button sx={{ bgcolor: 'green.100', color: 'green.700', px: 4, py: 2, borderRadius: 'md' }}>Informer</Button>
+      </Box>
 
       {/* Physical Performance Report */}
-      <div className="bg-white p-6 rounded-md shadow mb-6">
-        <h3 className="text-lg font-bold mb-4">Physical Performance Report</h3>
-        <table className="w-full table-auto">
-          <thead>
-            <tr className="bg-gray-200">
-              <th className="p-2 text-left">Name</th>
-              <th className="p-2 text-left">Report ID</th>
-              <th className="p-2 text-left">Status</th>
-              <th className="p-2 text-left">Time</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="p-2">Shivam Sharma</td>
-              <td className="p-2 text-blue-600">#ATH32</td>
-              <td className="p-2 text-yellow-500">Pending</td>
-              <td className="p-2 text-red-500">1 hour ago</td>
-            </tr>
-            <tr>
-              <td className="p-2">Jatin Mehra</td>
-              <td className="p-2 text-blue-600">#ATH44</td>
-              <td className="p-2 text-green-500">Completed</td>
-              <td className="p-2 text-gray-500">40 min ago</td>
-            </tr>
-            <tr>
-              <td className="p-2">Ritika Singh</td>
-              <td className="p-2 text-blue-600">#ATH65</td>
-              <td className="p-2 text-green-500">Completed</td>
-              <td className="p-2 text-gray-500">5 min ago</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <Box sx={{ bgcolor: 'white', p: 6, borderRadius: 'md', boxShadow: 'md', mb: 6 }}>
+        <Typography variant="h3" sx={{ fontSize: 'lg', fontWeight: 'bold', mb: 4 }}>Physical Performance Report</Typography>
+        <TableContainer>
+          <Table>
+            <TableHead>
+              <TableRow sx={{ bgcolor: 'gray.200' }}>
+                <TableCell sx={{ p: 2, textAlign: 'left' }}>Name</TableCell>
+                <TableCell sx={{ p: 2, textAlign: 'left' }}>Report ID</TableCell>
+                <TableCell sx={{ p: 2, textAlign: 'left' }}>Status</TableCell>
+                <TableCell sx={{ p: 2, textAlign: 'left' }}>Time</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {/* Table Rows */}
+              {/* ... (add rows similar to above) */}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Box>
 
       {/* Whistleblower Section */}
-      <div className="grid grid-cols-2 gap-4">
+      <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 4 }}>
         {/* Whistleblower Info */}
-        <div className="bg-blue-500 text-white p-6 rounded-md shadow">
-          <h3 className="text-lg font-bold">Whistleblower</h3>
-          <p className="text-4xl font-bold">5</p>
-          <p>New whistleblowers</p>
-        </div>
-
+        <Box sx={{ bgcolor: 'blue.500', color: 'white', p: 6, borderRadius: 'md', boxShadow: 'md' }}>
+          <Typography variant="h3" sx={{ fontSize: 'lg', fontWeight: 'bold' }}>Whistleblower</Typography>
+          <Typography variant="h1" sx={{ fontSize: '4xl', fontWeight: 'bold' }}>5</Typography>
+          <Typography>New whistleblowers</Typography>
+        </Box>
         {/* Bar Chart Placeholder */}
-        <div className="bg-white p-6 rounded-md shadow">
-          <h3 className="text-lg font-bold mb-4">Cases & Informer Overview</h3>
-          <div className="h-40 bg-gray-200 flex items-center justify-center">
-            {/* Placeholder for chart */}
-            <p className="text-gray-500">Bar Chart Placeholder</p>
-          </div>
-        </div>
-      </div>
-    </div>
+        <Box sx={{ bgcolor: 'white', p: 6, borderRadius: 'md', boxShadow: 'md' }}>
+          <Typography variant="h3" sx={{ fontSize: 'lg', fontWeight: 'bold', mb: 4 }}>Cases & Informer Overview</Typography>
+          <Box sx={{ height: '40', bgcolor: 'gray.200', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Typography sx={{ color: 'gray.500' }}>Bar Chart Placeholder</Typography>
+          </Box>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

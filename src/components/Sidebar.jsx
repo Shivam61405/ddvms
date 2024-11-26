@@ -1,45 +1,17 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Box, Typography, List, ListItem } from '@emotion/react';
 
 const Sidebar = () => {
   return (
-    <div className="w-64 bg-white shadow-md h-screen">
-      <div className="p-4 text-xl font-bold">DVMS</div>
-      <ul>
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            `p-4 block hover:bg-blue-100 ${isActive ? "bg-blue-200" : ""}`
-          }
-        >
-          Dashboard
-        </NavLink>
-        <NavLink
-          to="/data-source"
-          className={({ isActive }) =>
-            `p-4 block hover:bg-blue-100 ${isActive ? "bg-blue-200" : ""}`
-          }
-        >
-          Data Source
-        </NavLink>
-        <NavLink
-          to="/abp"
-          className={({ isActive }) =>
-            `p-4 block hover:bg-blue-100 ${isActive ? "bg-blue-200" : ""}`
-          }
-        >
-          ABP
-        </NavLink>
-        <NavLink
-          to="/case-list"
-          className={({ isActive }) =>
-            `p-4 block hover:bg-blue-100 ${isActive ? "bg-blue-200" : ""}`
-          }
-        >
-          Investigator Panel
-        </NavLink>
-      </ul>
-    </div>
+    <Box sx={{ width: '250px', bgcolor: 'gray.800', color: 'white', p: 4 }}>
+      <Typography variant="h2" sx={{ fontSize: 'xl', fontWeight: 'bold', mb: 4 }}>Menu</Typography>
+      <List>
+        <ListItem sx={{ p: 2, '&:hover': { bgcolor: 'gray.700' } }}>Dashboard</ListItem>
+        <ListItem sx={{ p: 2, '&:hover': { bgcolor: 'gray.700' } }}>Data Source</ListItem>
+        <ListItem sx={{ p: 2, '&:hover': { bgcolor: 'gray.700' } }}>ABP</ListItem>
+        <ListItem sx={{ p: 2, '&:hover': { bgcolor: 'gray.700' } }}>Case List</ListItem>
+      </List>
+    </Box>
   );
 };
 

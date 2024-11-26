@@ -1,88 +1,35 @@
 import React from "react";
+import { Box, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@emotion/react';
 
 const CaseList = () => {
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-2xl font-bold mb-6">Case List</h1>
+    <Box sx={{ p: 6, bgcolor: 'gray.100', minHeight: '100vh' }}>
+      <Typography variant="h1" sx={{ fontSize: '2xl', fontWeight: 'bold', mb: 6 }}>Case List</Typography>
 
-      {/* Table */}
-      <div className="bg-white p-6 rounded-md shadow">
-        <table className="w-full table-auto">
-          <thead>
-            <tr className="bg-gray-200">
-              <th className="p-2">Case ID</th>
-              <th className="p-2">Date</th>
-              <th className="p-2">Sport</th>
-              <th className="p-2">DRA</th>
-              <th className="p-2">Athlete ID</th>
-              <th className="p-2">Case Report</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="p-2">CID87</td>
-              <td className="p-2">27 Feb, 2024</td>
-              <td className="p-2">Swimming</td>
-              <td className="p-2">92%</td>
-              <td className="p-2">AID32</td>
-              <td className="p-2">
-                <button className="text-blue-600">Download</button>
-              </td>
-            </tr>
-            <tr>
-            <td className="p-2">CID87</td>
-              <td className="p-2">27 Feb, 2024</td>
-              <td className="p-2">Swimming</td>
-              <td className="p-2">92%</td>
-              <td className="p-2">AID32</td>
-              <td className="p-2">
-                <button className="text-blue-600">Download</button>
-              </td>
-            </tr>
-            <tr>
-            <td className="p-2">CID87</td>
-              <td className="p-2">27 Feb, 2024</td>
-              <td className="p-2">Swimming</td>
-              <td className="p-2">92%</td>
-              <td className="p-2">AID32</td>
-              <td className="p-2">
-                <button className="text-blue-600">Download</button>
-              </td>
-            </tr>
-            <tr>
-            <td className="p-2">CID87</td>
-              <td className="p-2">27 Feb, 2024</td>
-              <td className="p-2">Swimming</td>
-              <td className="p-2">92%</td>
-              <td className="p-2">AID32</td>
-              <td className="p-2">
-                <button className="text-blue-600">Download</button>
-              </td>
-            </tr>
-            <tr>
-            <td className="p-2">CID87</td>
-              <td className="p-2">27 Feb, 2024</td>
-              <td className="p-2">Swimming</td>
-              <td className="p-2">92%</td>
-              <td className="p-2">AID32</td>
-              <td className="p-2">
-                <button className="text-blue-600">Download</button>
-              </td>
-            </tr>
-            <tr>
-            <td className="p-2">CID87</td>
-              <td className="p-2">27 Feb, 2024</td>
-              <td className="p-2">Swimming</td>
-              <td className="p-2">92%</td>
-              <td className="p-2">AID32</td>
-              <td className="p-2">
-                <button className="text-blue-600">Download</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+      <TableContainer>
+        <Table>
+          <TableHead>
+            <TableRow sx={{ bgcolor: 'gray.200' }}>
+              <TableCell sx={{ p: 2, textAlign: 'left' }}>Case ID</TableCell>
+              <TableCell sx={{ p: 2, textAlign: 'left' }}>Description</TableCell>
+              <TableCell sx={{ p: 2, textAlign: 'left' }}>Status</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            <TableRow>
+              <TableCell sx={{ p: 2 }}>#C001</TableCell>
+              <TableCell sx={{ p: 2 }}>Investigation ongoing</TableCell>
+              <TableCell sx={{ p: 2, color: 'orange.500' }}>In Progress</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell sx={{ p: 2 }}>#C002</TableCell>
+              <TableCell sx={{ p: 2 }}>Closed case</TableCell>
+              <TableCell sx={{ p: 2, color: 'green.500' }}>Closed</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Box>
   );
 };
 

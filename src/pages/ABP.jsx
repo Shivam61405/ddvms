@@ -1,57 +1,58 @@
 import React from "react";
+import { Box, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@emotion/react';
 
 const ABP = () => {
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-2xl font-bold mb-6">ABP</h1>
+    <Box sx={{ p: 6, bgcolor: 'gray.100', minHeight: '100vh' }}>
+      <Typography variant="h1" sx={{ fontSize: '2xl', fontWeight: 'bold', mb: 6 }}>ABP</Typography>
 
       {/* Graphs */}
-      <div className="grid grid-cols-2 gap-4 mb-6">
+      <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 4, mb: 6 }}>
         {/* Haematological Graph */}
-        <div className="bg-white p-6 rounded-md shadow">
-          <h3 className="text-lg font-bold mb-4">Haematological Graph</h3>
-          <div className="h-40 bg-gray-200 flex items-center justify-center">
-            {/* Placeholder for Haematological Graph */}
-            <p className="text-gray-500">Graph Placeholder</p>
-          </div>
-        </div>
+        <Box sx={{ bgcolor: 'white', p: 6, borderRadius: 'md', boxShadow: 'md' }}>
+          <Typography variant="h3" sx={{ fontSize: 'lg', fontWeight: 'bold', mb: 4 }}>Haematological Graph</Typography>
+          <Box sx={{ height: '40', bgcolor: 'gray.200', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Typography sx={{ color: 'gray.500' }}>Graph Placeholder</Typography>
+          </Box>
+        </Box>
 
         {/* Steroidal Graph */}
-        <div className="bg-white p-6 rounded-md shadow">
-          <h3 className="text-lg font-bold mb-4">Steroidal Graph</h3>
-          <div className="h-40 bg-gray-200 flex items-center justify-center">
-            {/* Placeholder for Steroidal Graph */}
-            <p className="text-gray-500">Graph Placeholder</p>
-          </div>
-        </div>
-      </div>
+        <Box sx={{ bgcolor: 'white', p: 6, borderRadius: 'md', boxShadow: 'md' }}>
+          <Typography variant="h3" sx={{ fontSize: 'lg', fontWeight: 'bold', mb: 4 }}>Steroidal Graph</Typography>
+          <Box sx={{ height: '40', bgcolor: 'gray.200', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Typography sx={{ color: 'gray.500' }}>Graph Placeholder</Typography>
+          </Box>
+        </Box>
+      </Box>
 
       {/* ABP Reports */}
-      <div className="bg-white p-6 rounded-md shadow">
-        <h3 className="text-lg font-bold mb-4">ABP Reports</h3>
-        <table className="w-full table-auto">
-          <thead>
-            <tr className="bg-gray-200">
-              <th className="p-2 text-left">Name</th>
-              <th className="p-2 text-left">Report ID</th>
-              <th className="p-2 text-left">Return</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="p-2">Simran</td>
-              <td className="p-2 text-blue-600">#ATH76</td>
-              <td className="p-2 text-green-500">+5%</td>
-            </tr>
-            <tr>
-              <td className="p-2">Umesh</td>
-              <td className="p-2 text-blue-600">#ATH87</td>
-              <td className="p-2 text-green-500">+10%</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+      <Box sx={{ bgcolor: 'white', p: 6, borderRadius: 'md', boxShadow: 'md' }}>
+        <Typography variant="h3" sx={{ fontSize: 'lg', fontWeight: 'bold', mb: 4 }}>ABP Reports</Typography>
+        <TableContainer>
+          <Table>
+            <TableHead>
+              <TableRow sx={{ bgcolor: 'gray.200' }}>
+                <TableCell sx={{ p: 2, textAlign: 'left' }}>Name</TableCell>
+                <TableCell sx={{ p: 2, textAlign: 'left' }}>Report ID</TableCell>
+                <TableCell sx={{ p: 2, textAlign: 'left' }}>Return</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <TableRow>
+                <TableCell sx={{ p: 2 }}>Simran</TableCell>
+                <TableCell sx={{ p: 2, color: 'blue.600' }}>#ATH76</TableCell>
+                <TableCell sx={{ p: 2, color: 'green.500' }}>+5%</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell sx={{ p: 2 }}>Umesh</TableCell>
+                <TableCell sx={{ p: 2, color: 'blue.600' }}>#ATH87</TableCell>
+                <TableCell sx={{ p: 2, color: 'green.500' }}>+10%</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Box>
+    </Box>
   );
 };
 
